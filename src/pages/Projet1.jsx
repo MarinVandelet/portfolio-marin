@@ -87,20 +87,18 @@ export default function Projet1() {
       {/* Images  */}
       <div className="mt-12 grid md:grid-cols-2 gap-6">
         <motion.img
-          src="/public/projet1-1.png"
+          src="/projet1-1.png"
           className="rounded-xl border border-gray-700 shadow-lg"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        />
+          transition={{ duration: 0.5 }}/>
 
         <motion.img
-          src="/public/projet1-2.png" // 👉 À remplacer aussi
+          src="/projet1-2.png"
           className="rounded-xl border border-gray-700 shadow-lg"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-        />
+          transition={{ duration: 0.5, delay: 0.1 }}/>
       </div>
 
       {/* Résultat */}
