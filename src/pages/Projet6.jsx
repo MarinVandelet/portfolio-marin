@@ -20,7 +20,7 @@ export default function Projet1() {
         transition={{ duration: 0.5 }}
         className="text-4xl md:text-5xl font-['Sora'] font-bold mb-6"
       >
-        Projet 6 — Titre du projet
+        Projet 6 — Easy2Drive
       </motion.h1>
 
       {/* Description */}
@@ -30,7 +30,7 @@ export default function Projet1() {
         transition={{ delay: 0.2 }}
         className="text-gray-300 font-['Inter'] leading-relaxed mb-10"
       >
-        Une description détaillée du projet. Tu peux expliquer :
+        Description détaillée du projet :
         <br />• Le contexte
         <br />• La stack utilisée
         <br />• Les challenges techniques
