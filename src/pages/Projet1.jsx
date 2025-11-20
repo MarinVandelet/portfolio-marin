@@ -30,7 +30,7 @@ export default function Projet1() {
         transition={{ delay: 0.2 }}
         className="text-gray-300 font-['Inter'] leading-relaxed mb-10"
       >
-        Une description détaillée du projet. Tu peux expliquer :
+        Description détaillée du projet:
         <br />• Le contexte  
         <br />• La stack utilisée  
         <br />• Les challenges techniques  
