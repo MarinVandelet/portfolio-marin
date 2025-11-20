@@ -18,11 +18,19 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-gray-900/70 backdrop-blur-md text-white z-50 border-b border-gray-800">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-
+        
         {/* LOGO */}
-        <a href="#hero" className="text-xl font-semibold text-primary-400">
-          Marin Vandelet
-        </a>
+         <Link
+          to="/"
+          className="text-xl md:text-2xl font-['Sora'] font-extrabold tracking-wider 
+          text-white hover:text-primary-300 transition"
+        >
+          <span className="relative inline-block">
+            <span className="text-white/90">M</span>
+            <span className="text-white/40 ml-[-6px]">V</span>
+          </span>
+        </Link>
+
 
         {/* DESKTOP MENU */}
         <ul className="hidden md:flex items-center gap-8 text-sm md:text-base">
