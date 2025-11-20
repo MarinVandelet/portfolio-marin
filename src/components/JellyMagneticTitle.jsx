@@ -69,7 +69,7 @@ export default function JellyMagneticTitle() {
           backgroundPosition: ["300% 0%", "-300% 0%"], // ⭐ FONCTIONNE & FLUIDE
         }}
         transition={{
-          duration: 20,
+          duration: 14,
           repeat: Infinity,
           ease: "linear",
         }}
