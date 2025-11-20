@@ -26,12 +26,12 @@ export default function About() {
       className="py-24 bg-gray-950/60 border-y border-white/10 backdrop-blur-sm"
     >
       <div className="max-w-5xl mx-auto px-6">
-        {/* TITLE */}
+        {/* Titre */}
         <h2 className="text-3xl font-bold text-primary-400 font-['Sora'] mb-6">
           À propos
         </h2>
 
-        {/* DESCRIPTION */}
+        {/* Déscription classique */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -45,7 +45,7 @@ export default function About() {
           particulière aux détails visuels et à la qualité du code.
         </motion.p>
 
-        {/* TIMELINE RESPONSIVE */}
+        {/* FRISE */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -59,10 +59,10 @@ export default function About() {
             gap-12 md:gap-10
           "
         >
-          {/* LINE = hidden on mobile, visible on desktop */}
+          {/* Cache la ligne pr les utilisateurs mobiles */}
           <div className="hidden md:block absolute left-0 right-0 h-[3px] bg-white/10 top-1/2 transform -translate-y-1/2"></div>
 
-          {/* NEON LINE ANIMATION (desktop only) */}
+          {/* Frise Néon anim */}
           <motion.div
             className="hidden md:block absolute left-0 right-0 h-[3px] 
             bg-gradient-to-r from-primary-400 via-cyan-400 to-primary-400 
@@ -100,12 +100,12 @@ export default function About() {
                 {item.icon}
               </motion.div>
 
-              {/* LABEL */}
+              {/* NOM (pour les etudes) */}
               <h4 className="mt-9 text-white font-semibold font-['Sora'] text-sm">
                 {item.label}
               </h4>
 
-              {/* SUB TEXT */}
+              {/* Description */}
               <p className="text-gray-400 text-xs font-['Inter'] mt-1">
                 {item.sub}
               </p>

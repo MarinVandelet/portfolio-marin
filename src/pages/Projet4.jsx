@@ -1,16 +1,28 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-export default function Projet1() {
+export default function Projet4() {
   return (
     <div className="min-h-screen pt-24 pb-16 px-6 text-white max-w-5xl mx-auto">
-      
-      {/* Retour */}
-      <Link
-        to="/"
-        className="inline-block mb-8 text-primary-300 hover:text-primary-400 transition font-['Inter']"
-      >
-        ← Retour
+
+      {/* Bouton retour */}
+      <Link to="/#projects">
+        <motion.div
+          initial={{ opacity: 0, x: -10 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4 }}
+          className="
+            inline-flex items-center gap-2 mb-10 px-4 py-2
+            bg-white/5 border border-primary-400/40 
+            rounded-lg shadow-md shadow-primary-400/20 
+            backdrop-blur-md text-primary-300
+            hover:text-primary-200 hover:border-primary-400 
+            hover:shadow-primary-400/40
+            transition-all duration-300
+            font-['Inter']">
+          <span className="text-lg">←</span>
+          <span>Retour aux projets</span>
+        </motion.div>
       </Link>
 
       {/* Titre */}
@@ -30,12 +42,12 @@ export default function Projet1() {
         transition={{ delay: 0.2 }}
         className="text-gray-300 font-['Inter'] leading-relaxed mb-10"
       >
-        Description détaillée du projet:
-        <br />• Le contexte
-        <br />• La stack utilisée
-        <br />• Les challenges techniques
-        <br />• Les fonctionnalités clés
-        <br />• Ton rôle
+        Description détaillée du projet :
+        <br />• Le contexte  
+        <br />• La stack utilisée  
+        <br />• Les challenges techniques  
+        <br />• Les fonctionnalités clés  
+        <br />• Ton rôle personnel  
       </motion.p>
 
       {/* Images */}
@@ -55,7 +67,7 @@ export default function Projet1() {
         />
       </div>
 
-      {/* Stack */}
+      {/* Tech stack */}
       <div className="mt-12">
         <h2 className="text-2xl font-['Sora'] text-primary-400 mb-4">
           Technologies utilisées

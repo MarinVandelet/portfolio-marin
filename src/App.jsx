@@ -15,20 +15,43 @@ import Projet4 from "./pages/Projet4.jsx";
 import Projet5 from "./pages/Projet5.jsx";
 import Projet6 from "./pages/Projet6.jsx";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
+
+// 👇 Gère le scroll vers les ancres (#projects, etc.)
+function ScrollManager() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
+    }
+
+    // Si pas de hash => remonte en haut
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
+
+  return null;
+}
 
 export default function App() {
   return (
     <div className="relative text-white overflow-x-hidden">
-
-      {/* Effets globaux */}
+      {/* Effets */}
       <Background />
       <CursorLight />
       <Navbar />
 
-      <Routes>
+      {/* Gestion du scroll */}
+      <ScrollManager />
 
-        {/* ---------------- PAGE D’ACCUEIL ---------------- */}
+      <Routes>
+        {/*  Accueil (+ à propos) */}
         <Route
           path="/"
           element={
@@ -37,7 +60,7 @@ export default function App() {
               <About />
               <Projects />
 
-              {/* Skills */}
+              {/* Compétences */}
               <section id="skills" className="py-24 max-w-5xl mx-auto px-6">
                 <h2 className="text-3xl font-bold mb-10 text-primary-400 font-['Sora'] text-center">
                   Compétences
@@ -51,14 +74,13 @@ export default function App() {
           }
         />
 
-        {/* ---------------- PAGES PROJETS ---------------- */}
+        {/*  Projets  */}
         <Route path="/projet-1" element={<Projet1 />} />
         <Route path="/projet-2" element={<Projet2 />} />
         <Route path="/projet-3" element={<Projet3 />} />
         <Route path="/projet-4" element={<Projet4 />} />
         <Route path="/projet-5" element={<Projet5 />} />
         <Route path="/projet-6" element={<Projet6 />} />
-
       </Routes>
     </div>
   );
