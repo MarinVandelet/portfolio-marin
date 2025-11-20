@@ -20,7 +20,7 @@ export default function Projet1() {
         transition={{ duration: 0.5 }}
         className="text-4xl md:text-5xl font-['Sora'] font-bold mb-6"
       >
-        Projet 1 — Titre du projet
+        Projet 3 — Titre du projet
       </motion.h1>
 
       {/* Description */}

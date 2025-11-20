@@ -11,16 +11,13 @@ export default function JellyMagneticTitle() {
       letter.addEventListener("mousemove", (e) => {
         const rect = letter.getBoundingClientRect();
 
-        // distance from mouse to center of the letter
         const x = e.clientX - (rect.left + rect.width / 2);
         const y = e.clientY - (rect.top + rect.height / 2);
 
-        // distance factor (magnétisme)
         const distance = Math.sqrt(x * x + y * y);
-        const maxDist = 90; // influence radius
+        const maxDist = 90;
         const power = Math.max(0, 1 - distance / maxDist);
 
-        // transform values
         const translateX = x * 0.15 * power;
         const translateY = y * 0.15 * power;
         const scale = 1 + 0.25 * power;
@@ -52,18 +49,20 @@ export default function JellyMagneticTitle() {
   const text = "MARIN VANDELET".split("");
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center px-4 text-center">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         ref={containerRef}
-        className="flex gap-1 md:gap-2 select-none cursor-default"
+        className="flex gap-[2px] md:gap-2 select-none cursor-default flex-wrap justify-center"
       >
         {text.map((char, i) => (
           <span
             key={i}
-            className="magnetic-letter inline-block font-['Sora'] font-extrabold text-5xl md:text-7xl lg:text-8xl text-white transition-transform duration-150 ease-out"
+            className="magnetic-letter inline-block font-['Sora'] font-extrabold 
+            text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl
+            text-white transition-transform duration-150 ease-out"
           >
             {char === " " ? "\u00A0" : char}
           </span>
@@ -74,9 +73,11 @@ export default function JellyMagneticTitle() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
-        className="text-primary-200 text-base md:text-xl mt-6 font-['Inter']"
+        className="text-primary-200 
+        text-xs sm:text-sm md:text-base lg:text-lg 
+        mt-4 md:mt-6 font-['Inter']"
       >
-        Développeur Web • Frontend & Animations
+        Développeur Fullstack • Spécialisé Frontend & Animations
       </motion.p>
     </div>
   );

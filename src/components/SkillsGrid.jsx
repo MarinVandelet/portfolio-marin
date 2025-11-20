@@ -68,21 +68,36 @@ export default function SkillsGrid() {
     },
   ];
 
-  // Effet Tilt 3D
+  // Effet 3D
   const handleTilt = (e, card) => {
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
+  
+    const rotateX = (-y / 10).toFixed(2); 
+    const rotateY = (x / 10).toFixed(2);
+  
     card.style.transform = `
-      perspective(700px)
-      rotateX(${(-y / 25).toFixed(2)}deg)
-      rotateY(${(x / 25).toFixed(2)}deg)
-      scale(1.02)
+      perspective(1200px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.08)
+    `;
+  
+    // Ombre dynamique en fonction de la souris
+    card.style.boxShadow = `
+      ${-rotateY * 2}px ${rotateX * 2}px 30px rgba(0,0,0,0.45)
     `;
   };
-
+  
   const resetTilt = (card) => {
-    card.style.transform = "perspective(700px) rotateX(0deg) rotateY(0deg) scale(1)";
+    card.style.transform = `
+      perspective(1200px)
+      rotateX(0deg)
+      rotateY(0deg)
+      scale(1)
+    `;
+    card.style.boxShadow = "0 0 0 rgba(0,0,0,0)";
   };
 
   return (

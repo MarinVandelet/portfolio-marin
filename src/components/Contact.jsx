@@ -11,6 +11,7 @@ export default function Contact() {
 
         <ul className="space-y-2 text-gray-300 font-['Inter']">
           <li><span className="text-primary-300 font-semibold">Email :</span> vandeletmarin.pro@gmail.com</li>
+          <li><span className="text-primary-300 font-semibold">Numéro de téléphone :</span> 07.69.32.12.01</li>
           <li><span className="text-primary-300 font-semibold">Localisation :</span> France (ou remote)</li>
           <li><span className="text-primary-300 font-semibold">Disponibilité :</span> Ouvert aux opportunités freelance et CDI.</li>
         </ul>
