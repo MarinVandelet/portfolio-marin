@@ -30,8 +30,7 @@ export default function Projet1() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl md:text-5xl font-['Sora'] font-bold mb-8"
-      >
+        className="text-4xl md:text-5xl font-['Sora'] font-bold mb-8">
         Deepblock — Landing Page Dépôt de Capital
       </motion.h1>
 
@@ -88,7 +87,7 @@ export default function Projet1() {
       {/* Images  */}
       <div className="mt-12 grid md:grid-cols-2 gap-6">
         <motion.img
-          src="/src/assets/projet1-1.png"
+          src="/public/projet1-1.png"
           className="rounded-xl border border-gray-700 shadow-lg"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -96,7 +95,7 @@ export default function Projet1() {
         />
 
         <motion.img
-          src="/src/assets/projet1-2.png" // 👉 À remplacer aussi
+          src="/public/projet1-2.png" // 👉 À remplacer aussi
           className="rounded-xl border border-gray-700 shadow-lg"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
