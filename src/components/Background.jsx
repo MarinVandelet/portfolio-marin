@@ -1,27 +1,17 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function CursorLight() {
   const ref = useRef(null);
-  const [enabled, setEnabled] = useState(true);
 
   useEffect(() => {
-    // désactive si l'écran est trop petit (mobile)
-    if (window.innerWidth < 768) {
-      setEnabled(false);
-      return;
-    }
-
     const move = (e) => {
       if (ref.current) {
         ref.current.style.transform = `translate(${e.clientX - 175}px, ${e.clientY - 175}px)`;
       }
     };
-
     window.addEventListener("mousemove", move);
     return () => window.removeEventListener("mousemove", move);
   }, []);
-
-  if (!enabled) return null; // ❌ NE MONTE PAS SUR MOBILE
 
   return (
     <div
