@@ -15,8 +15,17 @@ export default function Background() {
     let w = canvas.width;
     let h = canvas.height;
 
-    const handleMove = (e) => { mouse.current.x = e.clientX; mouse.current.y = e.clientY; };
-    const handleOut = () => { mouse.current.x = null; mouse.current.y = null; };
+    // 👉 Detect mobile
+    const isMobile = window.innerWidth < 768;
+
+    const handleMove = (e) => { 
+      mouse.current.x = e.clientX; 
+      mouse.current.y = e.clientY; 
+    };
+    const handleOut = () => { 
+      mouse.current.x = null; 
+      mouse.current.y = null; 
+    };
 
     window.addEventListener("mousemove", handleMove);
     window.addEventListener("mouseout", handleOut);
@@ -64,17 +73,20 @@ export default function Background() {
       ctx.fillStyle = "rgba(3,6,23,1)";
       ctx.fillRect(0, 0, w, h);
 
-      const g1 = ctx.createRadialGradient(w*0.2, h*0.2, 0, w*0.2, h*0.2, 450);
-      g1.addColorStop(0, "rgba(48,150,255,0.35)");
-      g1.addColorStop(1, "rgba(3,6,23,0)");
-      ctx.fillStyle = g1;
-      ctx.fillRect(0, 0, w, h);
+      // 👉 Only draw glows if NOT mobile
+      if (!isMobile) {
+        const g1 = ctx.createRadialGradient(w*0.2, h*0.2, 0, w*0.2, h*0.2, 450);
+        g1.addColorStop(0, "rgba(48,150,255,0.35)");
+        g1.addColorStop(1, "rgba(3,6,23,0)");
+        ctx.fillStyle = g1;
+        ctx.fillRect(0, 0, w, h);
 
-      const g2 = ctx.createRadialGradient(w*0.8, h*0.7, 0, w*0.8, h*0.7, 550);
-      g2.addColorStop(0, "rgba(94,234,212,0.28)");
-      g2.addColorStop(1, "rgba(3,6,23,0)");
-      ctx.fillStyle = g2;
-      ctx.fillRect(0, 0, w, h);
+        const g2 = ctx.createRadialGradient(w*0.8, h*0.7, 0, w*0.8, h*0.7, 550);
+        g2.addColorStop(0, "rgba(94,234,212,0.28)");
+        g2.addColorStop(1, "rgba(3,6,23,0)");
+        ctx.fillStyle = g2;
+        ctx.fillRect(0, 0, w, h);
+      }
 
       particles.forEach((p) => { p.update(); p.draw(); });
 
@@ -97,5 +109,10 @@ export default function Background() {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="fixed inset-0 -z-20 w-full h-screen" />;
+  return (
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 -z-20 w-full h-screen"
+    />
+  );
 }
