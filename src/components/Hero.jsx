@@ -43,10 +43,10 @@ export default function Hero() {
     <header
       id="hero"
       className="
-        h-screen flex flex-col items-center justify-center 
+        h-[70vh] sm:h-[80vh] md:h-screen
+        flex flex-col items-center justify-center 
         relative px-6 overflow-hidden
-
-        translate-y-6 md:translate-y-10  /* ⭐ Descend tout légèrement */
+        translate-y-6 md:translate-y-10
       "
     >
       {/* === MV STATIC === */}
@@ -57,7 +57,7 @@ export default function Hero() {
           -z-20
           font-['Sora'] font-extrabold
           text-white/5
-          text-[170px] sm:text-[220px] md:text-[270px] lg:text-[390px]
+          text-[140px] sm:text-[200px] md:text-[270px] lg:text-[390px]
           leading-none tracking-wide
         "
       >
@@ -78,7 +78,7 @@ export default function Hero() {
           absolute top-1/2 -translate-y-1/2
           -z-10
           font-['Sora'] font-extrabold
-          text-[170px] sm:text-[220px] md:text-[270px] lg:text-[390px]
+          text-[140px] sm:text-[200px] md:text-[270px] lg:text-[390px]
           leading-none tracking-wide
           text-transparent bg-clip-text
           [background-size:300%_100%]
@@ -86,20 +86,21 @@ export default function Hero() {
         "
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.10) 50%, rgba(255,255,255,0.0) 100%)",
+            'linear-gradient(90deg, rgba(255,255,255,0.0) 0%, rgba(255,255,255,0.10) 50%, rgba(255,255,255,0.0) 100%)',
         }}
       >
         MV
       </motion.span>
 
-      {/* === TITRE MAGNÉTIQUE === */}
+      {/* === TITRE === */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         ref={containerRef}
         className="
-          flex gap-[2px] md:gap-2 flex-wrap justify-center 
+          flex gap-[2px] md:gap-2 
+          flex-wrap justify-center 
           select-none cursor-default z-10
         "
       >
@@ -109,11 +110,11 @@ export default function Hero() {
             className="
               magnetic-letter inline-block 
               font-['Sora'] font-extrabold
-              text-2xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl
+              text-xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl
               text-white transition-transform duration-150 ease-out
             "
           >
-            {char === " " ? "\u00A0" : char}
+            {char === ' ' ? '\u00A0' : char}
           </span>
         ))}
       </motion.div>
