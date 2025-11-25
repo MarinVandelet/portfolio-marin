@@ -34,12 +34,17 @@ export default function Navbar() {
         {/* DESKTOP MENU */}
         <ul className="hidden md:flex items-center gap-8 text-sm md:text-base">
           <li>
-            <a href="#about" className="hover:text-primary-300 transition">À propos</a>
+            <a href="#about" className="hover:text-primary-300 transition">
+              À propos
+            </a>
           </li>
 
-          {/* -------- MENU PROJETS -------- */}
-          <li className="relative">
-            {/* ⭐ Le bouton est maintenant un lien */}
+          {/* ========= MENUS PROJETS ========= */}
+          <li
+            className="relative"
+            onMouseLeave={() => setProjectsOpen(false)}   // ⭐ ferme quand on sort
+          >
+            {/* Lien vers la section + ouverture du menu */}
             <a
               href="#projects"
               className="hover:text-primary-300 transition"
@@ -48,7 +53,7 @@ export default function Navbar() {
               Projets
             </a>
 
-            {/* Zone anti-fermeture du menu */}
+            {/* Zone anti fermeture */}
             <div
               className="absolute left-0 w-full h-4 top-full"
               onMouseEnter={() => setProjectsOpen(true)}
@@ -66,7 +71,6 @@ export default function Navbar() {
                     rounded-lg p-2 w-56 shadow-xl backdrop-blur-md z-50
                     origin-top
                   "
-                  onMouseLeave={() => setProjectsOpen(false)}
                 >
                   {projectTitles.map((project) => (
                     <li key={project.id}>
@@ -84,7 +88,9 @@ export default function Navbar() {
           </li>
 
           <li>
-            <a href="#contact" className="hover:text-primary-300 transition">Contact</a>
+            <a href="#contact" className="hover:text-primary-300 transition">
+              Contact
+            </a>
           </li>
         </ul>
 
@@ -99,10 +105,12 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* MOBILE */}
+      {/* ========= MOBILE MENU ========= */}
       {menuOpen && (
         <div className="md:hidden bg-gray-900/95 border-t border-gray-800 p-4 space-y-4">
-          <a href="#about" className="block py-2">À propos</a>
+          <a href="#about" className="block py-2">
+            À propos
+          </a>
 
           <div>
             <button
@@ -119,6 +127,7 @@ export default function Navbar() {
                     key={project.id}
                     to={`/projet-${project.id}`}
                     className="block py-1 text-sm"
+                    onClick={() => setMenuOpen(false)}
                   >
                     {project.title}
                   </Link>
@@ -127,7 +136,9 @@ export default function Navbar() {
             )}
           </div>
 
-          <a href="#contact" className="block py-2">Contact</a>
+          <a href="#contact" className="block py-2">
+            Contact
+          </a>
         </div>
       )}
     </nav>
