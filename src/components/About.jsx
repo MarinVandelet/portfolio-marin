@@ -39,7 +39,7 @@ export default function About() {
           viewport={{ once: true }}
           className="text-gray-300 font-['Inter'] text-sm md:text-base leading-relaxed mb-12"
         >
-          Je suis un développeur web passionné, spécialisé dans les interfaces
+          Je suis un développeur web passionné de 21 ans, spécialisé dans les interfaces
           modernes, animées et performantes. J'aime créer des expériences
           fluides, élégantes et centrées sur l'utilisateur, avec une attention
           particulière aux détails visuels et à la qualité du code.
@@ -116,3 +116,4 @@ export default function About() {
     </section>
   );
 }
+
