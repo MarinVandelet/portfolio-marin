@@ -20,7 +20,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         
         {/* LOGO */}
-         <Link
+        <Link
           to="/"
           className="text-xl md:text-2xl font-['Sora'] font-extrabold tracking-wider 
           text-white hover:text-primary-300 transition"
@@ -31,23 +31,24 @@ export default function Navbar() {
           </span>
         </Link>
 
-
         {/* DESKTOP MENU */}
         <ul className="hidden md:flex items-center gap-8 text-sm md:text-base">
           <li>
             <a href="#about" className="hover:text-primary-300 transition">À propos</a>
           </li>
 
-          {/* -------- MENU PROJETS 3D -------- */}
+          {/* -------- MENU PROJETS -------- */}
           <li className="relative">
-            <button
+            {/* ⭐ Le bouton est maintenant un lien */}
+            <a
+              href="#projects"
               className="hover:text-primary-300 transition"
-              onClick={() => setProjectsOpen((prev) => !prev)}
+              onMouseEnter={() => setProjectsOpen(true)}
             >
               Projets
-            </button>
+            </a>
 
-            {/* Zone anti-fermeture */}
+            {/* Zone anti-fermeture du menu */}
             <div
               className="absolute left-0 w-full h-4 top-full"
               onMouseEnter={() => setProjectsOpen(true)}
