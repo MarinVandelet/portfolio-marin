@@ -141,7 +141,7 @@ export default function Projet2() {
         >
           <iframe
             className="w-full h-full"
-            src="https://youtu.be/embed/fMiw1BUnPlw"
+            src="https://youtube.com/embed/fMiw1BUnPlw"
             title="Présentation Novace"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -190,5 +190,6 @@ export default function Projet2() {
     </div>
   );
 }
+
 
 
