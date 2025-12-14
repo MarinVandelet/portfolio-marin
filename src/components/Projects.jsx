@@ -48,9 +48,9 @@ export default function Projects() {
     },
     {
       id: 6,
-      title: "Easy2Drive",
+      title: "AC2FL",
       description:
-        "Site Easy2Drive pour auto-école, construit avec TypeScript, PHP, SQL et UI Bootstrap.",
+        "Un des premiers sites réalisés en études, un concentré en HTML et CSS Bootstrap CDN.",
       thumbnail: "/src/assets/projects/projet-6.jpg",
     },
   ];
