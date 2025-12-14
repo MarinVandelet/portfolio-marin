@@ -41,9 +41,9 @@ export default function Projects() {
     },
     {
       id: 5,
-      title: "Edunote",
+      title: "Vitrine Makeup Artist",
       description:
-        "Application Edunote avec gros backend PHP, base SQL structurée.",
+        "Site Portfolio en react, pour une makeup artist, avec galerie d’images et contact.",
       thumbnail: "/src/assets/projects/projet-5.jpg",
     },
     {
