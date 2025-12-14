@@ -11,7 +11,7 @@ export default function Navbar() {
     { id: 2, title: "Novace" },
     { id: 3, title: "Portfolio" },
     { id: 4, title: "RapActus" },
-    { id: 5, title: "Edunote" },
+    { id: 5, title: "Vitrine" },
     { id: 6, title: "Easy2Drive" }
   ];
 
@@ -144,3 +144,4 @@ export default function Navbar() {
     </nav>
   );
 }
+
