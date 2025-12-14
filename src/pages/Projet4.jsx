@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Search, Tags, MessageSquare, Gauge, PenTool, LayoutTemplate,} from "lucide-react";
+import { Sparkles, Image, Layout, Palette } from "lucide-react";
 import Contact from "../components/Contact.jsx";
 
-export default function Projet4() {
+export default function Projet5() {
   return (
     <>
       {/* ===== CONTENU PROJET (container) ===== */}
@@ -37,7 +37,7 @@ export default function Projet4() {
           transition={{ duration: 0.5 }}
           className="text-4xl md:text-5xl font-['Sora'] font-bold mb-8"
         >
-          RapActus — Site d’actualité Rap (WordPress)
+          Portfolio artistique — Anaé Delmas
         </motion.h1>
 
         {/* Contexte */}
@@ -48,21 +48,24 @@ export default function Projet4() {
           className="text-gray-300 font-['Inter'] leading-relaxed mb-10"
         >
           <p className="mb-4">
-            RapActus est un site d’actualité dédié au rap : sorties d’albums,
-            collaborations, événements, mais aussi un peu d’analyse et de
-            critique. L’objectif était d’avoir une plateforme claire, cohérente
-            visuellement et simple à administrer.
+            Ce projet est un{" "}
+            <span className="text-primary-300 font-semibold">
+              portfolio artistique complet
+            </span>{" "}
+            réalisé pour une makeup artiste professionnelle. L’objectif était de
+            créer un site immersif et élégant, mettant en valeur son travail
+            visuel à travers des galeries photos animées et une identité
+            graphique forte.
           </p>
 
           <p className="mb-4">
-            Le projet a été pensé autour d’une charte sobre (noir / blanc /
-            verts), d’une navigation efficace et d’une structure de contenu
-            propre : catégories, étiquettes, recherche et commentaires (activés
-            pour la démo).
+            Le site a été pensé comme une véritable vitrine artistique :
+            navigation fluide, mise en avant des visuels, animations subtiles,
+            et structure évolutive pour ajouter facilement de nouveaux contenus.
           </p>
         </motion.div>
 
-        {/* Ce que j’ai fait */}
+        {/* Missions */}
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -75,42 +78,34 @@ export default function Projet4() {
 
           <ul className="space-y-3 text-gray-300 font-['Inter'] leading-relaxed">
             <li>
-              • Mise en place de l’arborescence du site : Accueil, Actualités, À
-              propos, Contact, Shop.
+              • Conception complète du design (univers sombre, glassmorphism,
+              ambiance artistique).
             </li>
-            <li>
-              • Design & intégration sous WordPress avec un rendu “pro”
-              (typographie, couleurs, sections, footer).
-            </li>
-            <li>
-              • Structuration des posts : miniatures, extrait, catégories/étiquettes,
-              navigation “suivant”, commentaires.
-            </li>
-            <li>
-              • Optimisations : travail SEO on-site (titres, méta, etc.) et
-              cache/performances.
-            </li>
+            <li>• Mise en place d’une navigation avec React Router (Accueil + galeries).</li>
+            <li>• Création de galeries photos interactives avec ouverture en grand (lightbox).</li>
+            <li>• Animations Framer Motion : apparitions, hover 3D, transitions fluides.</li>
+            <li>• Intégration d’un CV téléchargeable et sections À propos / Contact stylisées.</li>
           </ul>
         </motion.div>
 
         {/* Images */}
         <div className="mt-12 grid md:grid-cols-2 gap-6">
           <motion.img
-            src="/projet4-1.png"
+            src="/projet5-1.png"
             className="rounded-xl border border-gray-700 shadow-lg"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            alt="Aperçu RapActus 1"
+            alt="Portfolio Anaé - Aperçu 1"
           />
 
           <motion.img
-            src="/projet4-2.png"
+            src="/projet5-2.png"
             className="rounded-xl border border-gray-700 shadow-lg"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            alt="Aperçu RapActus 2"
+            alt="Portfolio Anaé - Aperçu 2"
           />
         </div>
 
@@ -125,18 +120,33 @@ export default function Projet4() {
             Résultat
           </h2>
 
-          <p className="mb-4">
-            Le site propose une expérience simple et structurée : une home
-            “vitrine” avec CTA vers les pages clés, une page actualités bien
-            filtrable (catégories, tags, recherche), et des pages complémentaires
-            (à propos / contact / shop) cohérentes visuellement.
+          <p className="mb-10">
+            Le résultat est un portfolio artistique professionnel, moderne et
+            immersif, pensé pour mettre en valeur le travail visuel de l’artiste.
+            Le site est totalement responsive, fluide à la navigation, et conçu
+            pour évoluer facilement avec de nouvelles galeries ou contenus.
           </p>
 
-          <p>
-            C’était un vrai exercice de gestion de contenu : penser
-            l’architecture, rendre l’édition facile, et améliorer le
-            référencement/chargement avec des outils WordPress adaptés.
-          </p>
+          {/* VIDEO YTB */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="
+              w-full aspect-video rounded-xl overflow-hidden
+              border border-gray-700 shadow-lg shadow-primary-400/10
+              bg-black/40 backdrop-blur-md
+            "
+          >
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/n_m_T-IunsQ"
+              title="Présentation Portfolio Artistique"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </motion.div>
         </motion.div>
 
         {/* Tech stack */}
@@ -146,60 +156,51 @@ export default function Projet4() {
           </h2>
 
           <div className="flex flex-wrap gap-3">
-            {/* WordPress */}
-            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm font-['Inter'] flex items-center gap-2">
+            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm flex items-center gap-2">
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                 className="w-5 h-5"
-                alt="WordPress"
+                alt="React"
               />
-              WordPress
+              React
             </span>
 
-            {/* Kubio (thème/éditeur) */}
-            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm font-['Inter'] flex items-center gap-2">
-              <LayoutTemplate className="w-5 h-5 text-primary-300" />
-              Kubio (thème/éditeur)
-            </span>
-
-            {/* WPForms */}
-            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm font-['Inter'] flex items-center gap-2">
-              <MessageSquare className="w-5 h-5 text-primary-300" />
-              WPForms (contact)
-            </span>
-
-            {/* SEO Press */}
-            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm font-['Inter'] flex items-center gap-2">
-              <Search className="w-5 h-5 text-primary-300" />
-              SEOPress
-            </span>
-
-            {/* WP Super Cache */}
-            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm font-['Inter'] flex items-center gap-2">
-              <Gauge className="w-5 h-5 text-primary-300" />
-              WP Super Cache
-            </span>
-
-            {/* Catégories / Tags */}
-            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm font-['Inter'] flex items-center gap-2">
-              <Tags className="w-5 h-5 text-primary-300" />
-              Catégories & Tags
-            </span>
-
-            {/* Photoshop */}
-            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm font-['Inter'] flex items-center gap-2">
+            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm flex items-center gap-2">
               <img
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg"
                 className="w-5 h-5"
-                alt="Photoshop"
+                alt="Vite"
               />
-              Photoshop
+              Vite
             </span>
 
-            {/* Design / wireframe */}
-            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm font-['Inter'] flex items-center gap-2">
-              <PenTool className="w-5 h-5 text-primary-300" />
-              Wireframe / UI
+            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm flex items-center gap-2">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                className="w-5 h-5"
+                alt="TailwindCSS"
+              />
+              TailwindCSS
+            </span>
+
+            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm flex items-center gap-2">
+              <Sparkles className="w-5 h-5 text-primary-300" />
+              Framer Motion
+            </span>
+
+            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm flex items-center gap-2">
+              <Image className="w-5 h-5 text-primary-300" />
+              Galeries & Lightbox
+            </span>
+
+            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm flex items-center gap-2">
+              <Layout className="w-5 h-5 text-primary-300" />
+              React Router
+            </span>
+
+            <span className="px-4 py-2 bg-gray-900/60 border border-gray-700 rounded-lg text-sm flex items-center gap-2">
+              <Palette className="w-5 h-5 text-primary-300" />
+              UI / UX Design
             </span>
           </div>
         </div>
