@@ -79,14 +79,14 @@ export default function Contact() {
                 className="text-gray-300 group-hover:text-white transition
                 drop-shadow-[0_0_4px_rgba(56,189,248,0.3)] group-hover:drop-shadow-[0_0_8px_rgba(56,189,248,0.6)]" /></a>
 
-            {/* Instagram */}
+            {/* Instagram 
             <a href="https://www.instagram.com/TON_INSTAGRAM" 
               target="_blank"
               className="group">
               <Instagram 
                 size={28}
                 className="text-gray-300 group-hover:text-white transition
-                drop-shadow-[0_0_4px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" /></a>
+                drop-shadow-[0_0_4px_rgba(255,255,255,0.1)] group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]" /></a>  */}
           </div>
         </div>
 
@@ -94,3 +94,4 @@ export default function Contact() {
     </section>
   );
 }
+
