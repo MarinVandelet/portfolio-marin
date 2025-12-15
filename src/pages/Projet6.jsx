@@ -149,6 +149,33 @@ export default function Projet6() {
           </motion.div>
         </motion.div>
 
+        {/* LIEN DU SITE */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-6 text-center"
+        >
+          <p className="text-gray-300 mb-2 font-['Inter']">
+            Vous pouvez consulter la page que j’ai réalisée ici :
+          </p>
+
+          <a
+            href="https://portfolio-anae.vercel.app/"
+            target="_blank"
+            rel="noreferrer"
+            className="
+              inline-block px-5 py-2 rounded-lg
+              bg-white/5 border border-primary-400/40
+              hover:border-primary-400 hover:text-primary-300
+              backdrop-blur-md transition shadow-md shadow-primary-400/20
+              font-['Inter']"
+          >
+            https://portfolio-anae.vercel.app/
+          </a>
+        </motion.div>
+
         {/* Tech stack */}
         <div className="mt-12">
           <h2 className="text-2xl font-['Sora'] text-primary-400 mb-4">
@@ -203,4 +230,5 @@ export default function Projet6() {
     </>
   );
 }
+
 
